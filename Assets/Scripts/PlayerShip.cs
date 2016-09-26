@@ -5,12 +5,15 @@ public class PlayerShip : MonoBehaviour {
 
     public float speed = 1f;
     public float degrees = 100f;
+    
+
+    
 
     bool onTrack = true;
 
 	// Use this for initialization
 	void Start () {
-	
+       
 	}
 	
 	// Update is called once per frame
@@ -21,13 +24,36 @@ public class PlayerShip : MonoBehaviour {
             curSpeed /= 2;
         }
 
+        
+        
+
         transform.Rotate(0, 0, -degrees * Time.deltaTime * Input.GetAxis("Horizontal"));
 
         Vector3 pos = transform.position;
         pos.x += curSpeed * transform.up.x * Time.deltaTime;
         pos.y += curSpeed * transform.up.y * Time.deltaTime;
         transform.position = pos;
-	}
+
+        if (pos.x <= -3.45f)
+        {
+            transform.position = new Vector3(-3.45f, transform.position.y, transform.position.z);
+        }
+
+        if (pos.y <= -1.8f)
+        {
+            transform.position = new Vector3(transform.position.x, -1.8f, transform.position.z);
+        }
+
+        if (pos.y >= 1.8f)
+        {
+            transform.position = new Vector3(transform.position.x, 1.8f, transform.position.z);
+        }
+
+        if (pos.x >= 3.45f)
+        {
+            transform.position = new Vector3(3.45f, transform.position.y, transform.position.z);
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -17,7 +17,27 @@ public class AIShip : MonoBehaviour {
         pos.x += speed * transform.up.x * Time.deltaTime;
         pos.y += speed * transform.up.y * Time.deltaTime;
         transform.position = pos;
-	}
+
+        if (pos.x <= -3.45f)
+        {
+            transform.position = new Vector3(-3.45f, transform.position.y, transform.position.z);
+        }
+
+        if (pos.y <= -1.8f)
+        {
+            transform.position = new Vector3(transform.position.x, -1.8f, transform.position.z);
+        }
+
+        if (pos.y >= 1.8f)
+        {
+            transform.position = new Vector3(transform.position.x, 1.8f, transform.position.z);
+        }
+
+        if (pos.x >= 3.45f)
+        {
+            transform.position = new Vector3(3.45f, transform.position.y, transform.position.z);
+        }
+    }
 
     void OnTriggerStay2D(Collider2D other){
         if (other.tag == "left_boundary") {
