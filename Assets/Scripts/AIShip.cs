@@ -18,24 +18,24 @@ public class AIShip : MonoBehaviour {
         pos.y += speed * transform.up.y * Time.deltaTime;
         transform.position = pos;
 
-        if (pos.x <= -3.45f)
+        if (pos.x <= -4f)
         {
-            transform.position = new Vector3(-3.5f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-4f, transform.position.y, transform.position.z);
         }
 
-        if (pos.y <= -3.5f)
+        if (pos.y <= -4.2f)
         {
-            transform.position = new Vector3(transform.position.x, -3.5f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, -4.2f, transform.position.z);
         }
 
-        if (pos.y >= 3.5f)
+        if (pos.y >= 4.2f)
         {
-            transform.position = new Vector3(transform.position.x, 3.5f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 4.2f, transform.position.z);
         }
 
-        if (pos.x >= 3.45f)
+        if (pos.x >= 4f)
         {
-            transform.position = new Vector3(3.5f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(4f, transform.position.y, transform.position.z);
         }
     }
 
