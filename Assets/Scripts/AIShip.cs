@@ -20,22 +20,22 @@ public class AIShip : MonoBehaviour {
 
         if (pos.x <= -3.45f)
         {
-            transform.position = new Vector3(-3.45f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-3.5f, transform.position.y, transform.position.z);
         }
 
-        if (pos.y <= -1.8f)
+        if (pos.y <= -3.5f)
         {
-            transform.position = new Vector3(transform.position.x, -1.8f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, -3.5f, transform.position.z);
         }
 
-        if (pos.y >= 1.8f)
+        if (pos.y >= 3.5f)
         {
-            transform.position = new Vector3(transform.position.x, 1.8f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 3.5f, transform.position.z);
         }
 
         if (pos.x >= 3.45f)
         {
-            transform.position = new Vector3(3.45f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(3.5f, transform.position.y, transform.position.z);
         }
     }
 
